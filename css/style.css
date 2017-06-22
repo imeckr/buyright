@@ -11,3 +11,43 @@
 .card-panel{
 	padding:0.5rem;
 }
+
+#laptop>img {
+    vertical-align: middle;
+	height:4rem;
+}
+#laptop{
+	padding: 0;
+}
+
+.laptop-list{
+	padding: 1rem 1rem;
+}
+
+.laptop-name{
+	font-size:0.9rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+.specs{
+	font-size:0.75rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+.row .spec-sec .col{
+	padding-left:0rem;
+	padding-right:0rem;
+}
+
+.price .col{
+	padding-left:0rem;
+	padding-right:0rem;
+}
+
+.divider{
+	margin: 1rem;
+}
