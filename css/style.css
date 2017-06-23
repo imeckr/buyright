@@ -55,3 +55,13 @@
 .specs .material-icons{
 	font-size:1rem;
 }
+
+.collapsible.popout>li.active{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.collapsible.popout>li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
