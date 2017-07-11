@@ -28,8 +28,8 @@
 	font-size:0.9rem;
 	margin-top: 0rem;
 	margin-bottom: 0rem;
-	font-weight: bold;
 	text-decoration: underline;
+	color: grey;
 }
 
 .specs{
@@ -43,17 +43,30 @@
 	padding-right:0rem;
 }
 
-.price .col{
+.buy .col{
 	padding-left:0rem;
 	padding-right:0rem;
 }
 
+.buy .price{
+	font-weight:bold;
+}
+
+.buy .buy-amazon{
+	font-size:0.8rem;
+}
+
+.rank{
+	font-weight:bold;
+}
 .divider{
 	margin: 1rem;
 }
 
-.specs .material-icons{
-	font-size:1rem;
+.specs .material-icons {
+    font-size: 0.4rem;
+    color: grey;
+	margin-right: 0.2rem;
 }
 
 .collapsible.popout>li.active{

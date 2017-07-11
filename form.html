@@ -50,31 +50,33 @@
 								<input type="checkbox" id="test1" checked="checked" />
 								<label for="test1">Internet</label>
 								<input type="checkbox" id="test2" />
-								<label for="test2">Emailing</label>
-								<input type="checkbox" id="test3" />
 								<label for="test3">Office</label>
-								<input type="checkbox" id="test4" checked="checked" />
-								<label for="test4">Organizing Photos</label>
-								<input type="checkbox" id="test5"  />
-								<label for="test5">Watching Movies</label>
-								<input type="checkbox" id="test6"  />
-								<label for="test6">Playing CDs</label>
-								
-								</div>
-								<div class="col s6">
-				
 								<input type="checkbox" id="test7"  />
 								<label for="test7">Video Calling</label>
-								<input type="checkbox" id="test8" checked="checked" />
-								<label for="test8">Photo Editing</label>
-								<input type="checkbox" id="test9"  />
-								<label for="test9">Video Editing</label>
-								<input type="checkbox" id="test10" checked="checked" />
-								<label for="test10">Gaming</label>
-								<input type="checkbox" id="test11"  />
-								<label for="test11">Engineering Softwares</label>
+								<!--
+								<input type="checkbox" id="test4" checked="checked" />						
+								<label for="test4">Organizing Photos</label>
+								-->
+								<input type="checkbox" id="test6"  />
+								<label for="test6">Playing CDs</label>
+								<input type="checkbox" id="test5"  />
+								<label for="test5">Watching Movies</label>								
+								</div>
+								<div class="col s6">
+								<!--
+								<label for="test2">Emailing</label>
+								<input type="checkbox" id="test3" />				
+								-->
+								<input type="checkbox" id="usage_photo" />
+								<label for="usage_photo">Photo Editing</label>
+								<input type="checkbox" id="usage_video"  />
+								<label for="usage_video">Video Editing</label>
+								<input type="checkbox" id="usage_gaming"/>
+								<label for="usage_gaming">Gaming</label>
 								<input type="checkbox" id="test12" checked="checked" />
 								<label for="test12">Coding</label>
+								<input type="checkbox" id="test11"  />
+								<label for="test11">Engineering Softwares</label>
 								</div>
 							</div>
 							<div class="row">
@@ -86,6 +88,7 @@
 							</div>
 						</div>
 					</li>
+
 					<li>
 						<div class="collapsible-header"><i class="material-icons">laptop_windows</i>Operating System<span class="new badge" data-badge-caption="Select"></span></div>
 						<div class="collapsible-body">
@@ -97,35 +100,141 @@
 									<label for="testr1">Yes</label>
 									<input name="group1" type="radio" id="testr2" />
 									<label for="testr2">No, I can get a free copy of Windows 10 for myself</label>
+									<!--
 									<input name="group1" type="radio" id="testr3" />
 									<label for="testr3">Linux/Ubuntu works for me</label>
+									-->
 								</div>
 							</div>
 							</div>
 						</div>
 					</li>
+
+					<li id="photo_section" style="display:none">
+						<div class="collapsible-header"><i class="material-icons">brush</i>Photo Editing<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>What kind of photo editing ?</span>
+							<div class="row">
+							<div class="input-field">
+								<div class="col s12">
+									<input name="photo_editing" type="radio" id="photo_editing_basic" />
+									<label for="photo_editing_basic">Basic Photo Editing (crop/resize/brighten/contrast)</label>
+									<input name="photo_editing" type="radio" id="photo_editing_adv" />
+									<label for="photo_editing_adv">Professional Photo Editing (Photoshop, Lightroom, Corel Aftershot, etc.)</label>
+									<!--
+									<input name="group1" type="radio" id="testr3" />
+									<label for="testr3">Linux/Ubuntu works for me</label>
+									-->
+								</div>
+							</div>
+							</div>
+						</div>
+					</li>
+
+					<li id="video_section" style="display:none">
+						<div class="collapsible-header"><i class="material-icons">camera_roll</i>Video Editing<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>What kind of video editing ?</span>
+							<div class="row">
+							<div class="input-field">
+								<div class="col s12">
+									<input name="video_editing" type="radio" id="video_editing_basic" />
+									<label for="video_editing_basic">Basic Video Editing (like windows movie maker)</label>
+									<input name="video_editing" type="radio" id="video_editing_adv" />
+									<label for="video_editing_adv">Professional Video Editing (Premiere Pro, After Effects, Sony Vegas, etc.)</label>
+									<!--
+									<input name="group1" type="radio" id="testr3" />
+									<label for="testr3">Linux/Ubuntu works for me</label>
+									-->
+								</div>
+							</div>
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<div class="collapsible-header"><i class="material-icons">loyalty</i>Brand<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>Select one or more!</span>
+							<div class="row">
+								<div class="col s6">
+									<input type="checkbox" id="brand_acer" checked="checked" />
+									<label for="brand_acer">Acer</label>
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="brand_dell" />
+									<label for="brand_dell">Dell</label>
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="brand_hp"  />
+									<label for="brand_hp">HP</label>															
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="brand_lenovo" />
+									<label for="brand_lenovo">Lenovo</label>
+								</div>
+							</div>
+						</div>
+					</li>					
+
+					<li id="gaming_section" style="display:none">
+						<div class="collapsible-header"><i class="material-icons">videogame_asset</i>Gaming<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>What kind of games you plan to play ?</span>
+							<div class="row">
+								<div class="col s6">
+									<input type="checkbox" id="gaming_light" checked="checked" />
+									<label for="gaming_light">Light Games</label>
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="gaming_demanding" />
+									<label for="gaming_demanding">Demanding Games</label>
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="gaming_vdemanding"  />
+									<label for="gaming_vdemanding">Very Demanding Games</label>															
+								</div>
+								<div class="col s6">
+									<input type="checkbox" id="gaming_vvdemanding" />
+									<label for="gaming_vvdemanding">Extremely Demanding Games</label>
+								</div>
+							</div>
+						</div>
+					</li>
+					
 					<li>
 						<div class="collapsible-header"><i class="material-icons">device_hub</i>Others<span class="new badge" data-badge-caption="Select"></span></div>
 						<div class="collapsible-body">
 							<div class="row">
 								<div class="col s12">
+								<div class="row">
+									<div class="col s2 valign-wrapper">
 									<span>Screen size</span>
-									<p>
+									</div>
+									<div class="col s10">
 											<input name="group2" type="radio" id="2test1" />
-											<label for="2test1">10 to 12 inches</label>
+											<label for="2test1">10" to 12"</label>
 											<input name="group2" type="radio" id="2test2" />
-											<label for="2test2">13 to 14 inches</label>
+											<label for="2test2">13" to 15"</label>
+											<!--
 											<input name="group2" type="radio" id="2test3" checked/>
-											<label for="2test3">15 inches</label>
-									</p>
-								
+											<label for="2test3">15.6"</label>
+											-->
+											<input name="group2" type="radio" id="2test3" checked/>
+											<label for="2test3">17" to 18"</label>
+									</div>
+								</div>
+								<div class="row">
+									<div class="col s2 valign-wrapper">
 									<span>Touch Screen</span>
-									<p>								
+									</div>
+									<div class="col s10">
 											<input name="group3" type="radio" id="3test1" />
 											<label for="3test1">Yes</label>
 											<input name="group3" type="radio" id="3test2" checked/>
 											<label for="3test2">No</label>
-									</p>
+									</div>
+								</div>
 								</div>
 							</div>
 						</div>
@@ -195,6 +304,6 @@
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
+		<script type="text/javascript" src="js/form.js"></script>
 	</body>
 </html>
