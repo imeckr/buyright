@@ -7,13 +7,13 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 	</head>
 	<body>
 	<nav>
 		<div class="nav-wrapper white">
 		<a href="#" class="brand-logo center">
-			<img src="img/logo_only.png">
+			<img src="{{url_for('static',filename='img/logo_only.png')}}">
 		</a>
 		</div>
 	</nav>
@@ -24,7 +24,7 @@
 				<h4 class ="header col s12 light center white-text">Confused which Laptop to buy?</h4>
 			</div>
 			<div class="row center">
-				<a href="form.html" class="btn-large waves-effect waves-light white red-text text-accent-2">Get Expert Advice!</a>
+				<a href="/form" class="btn-large waves-effect waves-light white red-text text-accent-2">Get Expert Advice!</a>
 			</div>	
 		</div>
 	</div>
@@ -75,7 +75,7 @@
 					<div class="card-panel grey lighten-5">
 						<div class="row valign-wrapper">
 							<div class="col s3 center">
-							<img src="img/sangeeta-yadav.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+							<img src="{{url_for('static',filename='img/sangeeta-yadav.jpg')}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
 							</div>
 							<div class="col s9">
 								<div class="card-title bold">Sangeeta Yadav</div>
@@ -88,7 +88,7 @@
 				<div class="card-panel grey lighten-5">
 					<div class="row valign-wrapper">
 						<div class="col s3 center">
-						<img src="img/aakash-rajwani-1.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+						<img src="{{url_for('static',filename='img/aakash-rajwani-1.jpg')}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
 						</div>
 						<div class="col s9">
 							<div class="card-title bold">Aakash Rajwani</div>
@@ -101,7 +101,7 @@
 				<div class="card-panel grey lighten-5">
 					<div class="row valign-wrapper">
 						<div class="col s3 center">
-						<img src="img/puspendra-agrawal.jpg" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
+						<img src="{{url_for('static',filename='img/puspendra-agrawal.jpg')}}" alt="" class="circle responsive-img"> <!-- notice the "circle" class -->
 						</div>
 						<div class="col s9">
 							<div class="card-title bold">Puspendra Agrawal</div>
@@ -112,7 +112,7 @@
 				</div>
 			</div>
 			<div class="row center">
-				<a href="form.html" class="btn waves-effect waves-light white red-text text-accent-2">Get Expert Advice!</a>
+				<a href="/form" class="btn waves-effect waves-light white red-text text-accent-2">Get Expert Advice!</a>
 			</div>			
 		</div>			
 	</div>
@@ -137,6 +137,5 @@
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/index.js"></script>
 	</body>
 </html>

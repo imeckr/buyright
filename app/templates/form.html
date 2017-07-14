@@ -7,13 +7,13 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link type="text/css" rel="stylesheet" href="css/style.css">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
 	</head>
 	<body>
 	<nav>
 		<div class="nav-wrapper white">
 		<a href="home.html" class="brand-logo center">
-			<img src="img/logo_only.png">
+			<img src="{{url_for('static',filename='img/logo_only.png')}}">
 		</a>
 		</div>
 	</nav>
@@ -47,43 +47,49 @@
 							
 								<div class="col s6">
 								
-								<input type="checkbox" id="test1" checked="checked" />
-								<label for="test1">Internet</label>
-								<input type="checkbox" id="test2" />
-								<label for="test3">Office</label>
-								<input type="checkbox" id="test7"  />
-								<label for="test7">Video Calling</label>
+								<input class="usage" type="checkbox" id="usage_internet" checked="checked" />
+								<label for="usage_internet">Internet</label>
+								
+								<input class="usage" type="checkbox" id="usage_office" />
+								<label for="usage_office">Office</label>
+								
+								<input class="usage" type="checkbox" id="usage_vc"  />
+								<label for="usage_vc">Video Calling</label>
 								<!--
 								<input type="checkbox" id="test4" checked="checked" />						
 								<label for="test4">Organizing Photos</label>
 								-->
-								<input type="checkbox" id="test6"  />
-								<label for="test6">Playing CDs</label>
-								<input type="checkbox" id="test5"  />
-								<label for="test5">Watching Movies</label>								
+								<input class="usage" type="checkbox" id="usage_cds"  />
+								<label for="usage_cds">Playing CDs</label>
+								<input class="usage" type="checkbox" id="usage_movies"  />
+								<label for="usage_movies">Watching Movies</label>								
 								</div>
 								<div class="col s6">
 								<!--
 								<label for="test2">Emailing</label>
 								<input type="checkbox" id="test3" />				
 								-->
-								<input type="checkbox" id="usage_photo" />
+								<input class="usage" type="checkbox" id="usage_photo" />
 								<label for="usage_photo">Photo Editing</label>
-								<input type="checkbox" id="usage_video"  />
+								
+								<input class="usage" type="checkbox" id="usage_video"  />
 								<label for="usage_video">Video Editing</label>
-								<input type="checkbox" id="usage_gaming"/>
+								
+								<input class="usage" type="checkbox" id="usage_gaming"/>
 								<label for="usage_gaming">Gaming</label>
-								<input type="checkbox" id="test12" checked="checked" />
-								<label for="test12">Coding</label>
-								<input type="checkbox" id="test11"  />
-								<label for="test11">Engineering Softwares</label>
+								
+								<input class="usage" type="checkbox" id="usage_coding" checked="checked" />
+								<label for="usage_coding">Coding</label>
+								
+								<input class="usage" type="checkbox" id="usage_eng"  />
+								<label for="usage_eng">Engineering Softwares</label>
 								</div>
 							</div>
 							<div class="row">
 							<div class="input-field col s12">
 								<i class="material-icons prefix">mode_edit</i>
-								<textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-								<label for="icon_prefix2">Specify if any other usages</label>
+								<textarea id="other_usage" class="materialize-textarea"></textarea>
+								<label for="other_usage">Specify if any other usages</label>
 							</div>
 							</div>
 						</div>
@@ -96,10 +102,10 @@
 							<div class="row">
 							<div class="input-field">
 								<div class="col s12">
-									<input name="group1" type="radio" id="testr1" />
-									<label for="testr1">Yes</label>
-									<input name="group1" type="radio" id="testr2" />
-									<label for="testr2">No, I can get a free copy of Windows 10 for myself</label>
+									<input name="windows" type="radio" id="windows_yes" checked/>
+									<label for="windows_yes">Yes</label>
+									<input name="windows" type="radio" id="windows_no" />
+									<label for="windows_no">No, I can get a free copy of Windows 10 for myself</label>
 									<!--
 									<input name="group1" type="radio" id="testr3" />
 									<label for="testr3">Linux/Ubuntu works for me</label>
@@ -117,7 +123,7 @@
 							<div class="row">
 							<div class="input-field">
 								<div class="col s12">
-									<input name="photo_editing" type="radio" id="photo_editing_basic" />
+									<input name="photo_editing" type="radio" id="photo_editing_basic" checked/>
 									<label for="photo_editing_basic">Basic Photo Editing (crop/resize/brighten/contrast)</label>
 									<input name="photo_editing" type="radio" id="photo_editing_adv" />
 									<label for="photo_editing_adv">Professional Photo Editing (Photoshop, Lightroom, Corel Aftershot, etc.)</label>
@@ -138,7 +144,7 @@
 							<div class="row">
 							<div class="input-field">
 								<div class="col s12">
-									<input name="video_editing" type="radio" id="video_editing_basic" />
+									<input name="video_editing" type="radio" id="video_editing_basic" checked/>
 									<label for="video_editing_basic">Basic Video Editing (like windows movie maker)</label>
 									<input name="video_editing" type="radio" id="video_editing_adv" />
 									<label for="video_editing_adv">Professional Video Editing (Premiere Pro, After Effects, Sony Vegas, etc.)</label>
@@ -158,21 +164,29 @@
 							<span>Select one or more!</span>
 							<div class="row">
 								<div class="col s6">
-									<input type="checkbox" id="brand_acer" checked="checked" />
-									<label for="brand_acer">Acer</label>
+									<input class="laptop_brand" type="checkbox" id="brand_Acer" checked="checked" />
+									<label for="brand_Acer">Acer</label>
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="brand_dell" />
-									<label for="brand_dell">Dell</label>
+									<input class="laptop_brand" type="checkbox" id="brand_Dell" />
+									<label for="brand_Dell">Dell</label>
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="brand_hp"  />
-									<label for="brand_hp">HP</label>															
+									<input class="laptop_brand" type="checkbox" id="brand_HP"  />
+									<label for="brand_HP">HP</label>															
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="brand_lenovo" />
-									<label for="brand_lenovo">Lenovo</label>
+									<input class="laptop_brand" type="checkbox" id="brand_Lenovo" />
+									<label for="brand_Lenovo">Lenovo</label>
 								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_Asus"  />
+									<label for="brand_Asus">ASUS</label>															
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_MSI" />
+									<label for="brand_MSI">MSI</label>
+								</div>								
 							</div>
 						</div>
 					</li>					
@@ -183,19 +197,19 @@
 							<span>What kind of games you plan to play ?</span>
 							<div class="row">
 								<div class="col s6">
-									<input type="checkbox" id="gaming_light" checked="checked" />
+									<input name="gaming" type="checkbox" id="gaming_light" checked="checked" />
 									<label for="gaming_light">Light Games</label>
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="gaming_demanding" />
+									<input name="gaming" type="checkbox" id="gaming_demanding" />
 									<label for="gaming_demanding">Demanding Games</label>
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="gaming_vdemanding"  />
+									<input name="gaming" type="checkbox" id="gaming_vdemanding"  />
 									<label for="gaming_vdemanding">Very Demanding Games</label>															
 								</div>
 								<div class="col s6">
-									<input type="checkbox" id="gaming_vvdemanding" />
+									<input name="gaming" type="checkbox" id="gaming_vvdemanding" />
 									<label for="gaming_vvdemanding">Extremely Demanding Games</label>
 								</div>
 							</div>
@@ -212,16 +226,14 @@
 									<span>Screen size</span>
 									</div>
 									<div class="col s10">
-											<input name="group2" type="radio" id="2test1" />
-											<label for="2test1">10" to 12"</label>
-											<input name="group2" type="radio" id="2test2" />
-											<label for="2test2">13" to 15"</label>
-											<!--
-											<input name="group2" type="radio" id="2test3" checked/>
-											<label for="2test3">15.6"</label>
-											-->
-											<input name="group2" type="radio" id="2test3" checked/>
-											<label for="2test3">17" to 18"</label>
+											<input name="screen_size" type="checkbox" id="screen_tiny" />
+											<label for="screen_tiny">10" to 12"</label>
+											<input name="screen_size" type="checkbox" id="screen_small" />
+											<label for="screen_small">13" to 14"</label>
+											<input name="screen_size" type="checkbox" id="screen_med" checked/>
+											<label for="screen_med">15.6"</label>
+											<input name="screen_size" type="checkbox" id="screen_large" checked/>
+											<label for="screen_large">17" to 18"</label>
 									</div>
 								</div>
 								<div class="row">
@@ -229,10 +241,10 @@
 									<span>Touch Screen</span>
 									</div>
 									<div class="col s10">
-											<input name="group3" type="radio" id="3test1" />
-											<label for="3test1">Yes</label>
-											<input name="group3" type="radio" id="3test2" checked/>
-											<label for="3test2">No</label>
+											<input name="touch_screen" type="radio" id="tc_yes" />
+											<label for="tc_yes">Yes</label>
+											<input name="touch_screen" type="radio" id="tc_no" checked/>
+											<label for="tc_no">No</label>
 									</div>
 								</div>
 								</div>
@@ -246,12 +258,12 @@
 								<div class="col s12">
 									<span>From where will you buy your laptop ?</span>
 									<p>
-										<input name="group4" type="radio" id="4test1" />
-										<label for="4test1">Offline Store</label>
-										<input name="group4" type="radio" id="4test2" />
-										<label for="4test2">Online E-commerce website</label>
-										<input name="group4" type="radio" id="4test3" />
-										<label for="4test3">Any, wherever I get a better deal</label>
+										<input name="buying" type="radio" id="buying_off" checked/>
+										<label for="buying_off">Offline Store</label>
+										<input name="buying" type="radio" id="buying_on" />
+										<label for="buying_on">Online E-commerce website</label>
+										<input name="buying" type="radio" id="buying_any" />
+										<label for="buying_any">Any, wherever I get a better deal</label>
 									</p>
 								</div>
 							</div>
@@ -261,13 +273,13 @@
 									<div class="row">
 									<div class="input-field col s12">
 										<i class="material-icons prefix">send</i>
-										<input id="icon_prefix" type="email" class="validate">
-										<label for="icon_prefix">Email-Id</label>
+										<input id="email_address" type="email" class="validate">
+										<label for="email_address">Email-Id</label>
 									</div>
 									<div class="input-field col s12 ">
 										<i class="material-icons prefix">phone</i>
-										<input id="icon_telephone" type="tel" class="validate">
-										<label for="icon_telephone">Telephone</label>
+										<input id="contact_no" type="tel" class="validate">
+										<label for="contact_no">Telephone</label>
 									</div>
 									</div>
 								</div>								
@@ -279,7 +291,7 @@
 				</div>
 			</div>
 			<div class="row center">
-				<a href="suggestions.html" class="btn waves-effect waves-light red white-text accent-2"><i class="material-icons left">done</i>Submit</a>
+				<button id="get_suggestions" class="btn waves-effect waves-light red white-text accent-2"><i class="material-icons left">done</i>Submit</button>
 			</div>	
 		</div>
 	</div>
@@ -304,6 +316,6 @@
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-		<script type="text/javascript" src="js/form.js"></script>
+		<script type="text/javascript" src="{{url_for('static',filename='js/form.js')}}"></script>
 	</body>
 </html>
