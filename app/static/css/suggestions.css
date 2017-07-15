@@ -1,0 +1,114 @@
+.nav-wrapper .brand-logo img {
+    height: 3rem;
+}
+.brand-logo {
+    display: inline-block;
+    height: 100%;
+}
+.brand-logo>img {
+    vertical-align: middle
+}
+.card-panel{
+	padding:0.5rem;
+}
+
+#laptop>img {
+    vertical-align: middle;
+	height:4rem;
+}
+#laptop{
+	padding: 0;
+}
+
+.laptop-list{
+	padding: 1rem 1rem 0rem;
+}
+
+.laptop-name{
+	font-size:0.9rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+	text-decoration: underline;
+	color: grey;
+}
+
+.specs{
+	font-size:0.75rem;
+	margin-top: 0rem;
+	margin-bottom: 0rem;
+}
+
+.row .spec-sec .col{
+	padding-left:0rem;
+	padding-right:0rem;
+}
+
+.row .spec-sec{
+	margin-left: 0rem;
+    margin-right: 0rem;
+}
+
+.row .laptop-brand{
+	margin-left: 0rem;
+    margin-right: 0rem;
+    margin-bottom: 0rem;
+}
+
+.row .laptop-item{
+	margin-bottom: 0;
+}
+
+.buy .col{
+	padding-left:0rem;
+	padding-right:0rem;
+}
+
+.buy .price{
+	font-weight:bold;
+}
+
+.buy .buy-amazon{
+	font-size:0.8rem;
+}
+
+.rank{
+	font-weight:bold;
+}
+.divider{
+	margin-bottom: 1rem;
+    margin-top: 0rem;
+}
+
+.specs .material-icons {
+    font-size: 0.4rem;
+    color: grey;
+	margin-right: 0.2rem;
+}
+
+.collapsible.popout>li.active{
+    margin-left: 2px;
+    margin-right: 2px;
+}
+
+.collapsible.popout>li {
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.specifications_you_need{
+	padding: 1rem 1rem 1rem;
+}
+
+.fulltext span,
+.less {
+	display: none;
+}
+
+.fulltext:target span,
+.fulltext:target .less {
+	display: block;
+}
+
+.fulltext:target .more {
+	display: none;
+}

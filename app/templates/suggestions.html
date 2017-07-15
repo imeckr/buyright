@@ -7,7 +7,7 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/suggestions.css')}}">
 	</head>
 	<body>
 	<nav>
@@ -31,8 +31,37 @@
 				<ul class="collapsible popout" data-collapsible="accordion">
 					<li>
 						<div class="collapsible-header"><i class="material-icons">memory</i>Specifications you need</div>
-						<div class="collapsible-body">
-							<span>Generated Text</span>
+						<div class="collapsible-body specifications_you_need">
+								<span><b>Processor</b>: {{text_suggestions["Short Processor"]}}</span>
+								<div class="fulltext" id="more-1">
+									<a class="more" href="#more-1">Show more</a>
+									<span>{{text_suggestions["Processor"]}}</span>
+									<a class="less" href="#less-1">Show less</a>
+								</div>
+								<span><b>RAM</b>: {{text_suggestions["Short RAM"]}}</span>
+								<div class="fulltext" id="more-2">
+									<a class="more" href="#more-2">Show more</a>
+									<span>{{text_suggestions["RAM"]}}</span>
+									<a class="less" href="#less-2">Show less</a>
+								</div>							
+								<span><b>GPU</b>: {{text_suggestions["Short GPU"]}}</span>
+								<div class="fulltext" id="more-3">
+									<a class="more" href="#more-3">Show more</a>
+									<span>{{text_suggestions["GPU"]}}</span>
+									<a class="less" href="#less-3">Show less</a>
+								</div>							
+								<span><b>VRAM</b>: {{text_suggestions["Short VRAM"]}}</span>
+								<div class="fulltext" id="more-4">
+									<a class="more" href="#more-4">Show more</a>
+									<span>{{text_suggestions["VRAM"]}}</span>
+									<a class="less" href="#less-4">Show less</a>
+								</div>							
+								<span><b>Storage</b>: {{text_suggestions["Short Storage"]}}</span>
+								<div class="fulltext" id="more-5">
+									<a class="more" href="#more-5">Show more</a>
+									<span>{{text_suggestions["Storage"]}}</span>
+									<a class="less" href="#less-5">Show less</a>
+								</div>							
 						</div>
 					</li>
 					<li>
@@ -40,189 +69,102 @@
 						<div class="collapsible-body laptop-list">
 							<div class="row">
 								<div class="col s12">
-									<div class="row">
+									{% for i in range(suggestions|length) %}
+									<div class="row laptop-item">
+										<div class="row laptop-brand">
 										<div class="col s1">
-											<span class="rank">1.</span>
+											<span class="rank">{{i+1}}.</span>
 										</div>
 										<div class="col s3" id="laptop">
-											<img src="img/laptop.png">
-										</div>
-										
+											<img src="{{url_for('static',filename='img/laptop.png')}}">
+										</div>	
 										<div class="col s8 buy">		
-											<p class="laptop-name">Acer Aspire E5-573G-39G8 (NX MVMSI.045)/ E5-573G-3100 (NX MVPSI.045)</p>
+											<p class="laptop-name">{{suggestions[i]["Brand"] + " " + suggestions[i]["series name"] }}</p>
 											<div class="valign-wrapper">
 												<div class="col s5 price left">
-													Rs.34,540
+													Rs. {{suggestions[i]["Best Price"]|int}}
 												</div>
 												<div class="col s7 buy-amazon left-align">
 													Buy from Amazon
 												</div>
 											</div>
 										</div>
-										<div class="spec-sec">
-										<div class="col s3">
-											<p class="specs"><i class="material-icons">lens</i>AMD A10 9600P</p>
-											<p class="specs"><i class="material-icons">lens</i>16GB DDR4</p>
 										</div>
-										<div class="col s4">
-											<p class="specs"><i class="material-icons">lens</i>15.6" FHD</p>
-											<p class="specs"><i class="material-icons">lens</i>Win10 + MS Office</p>
-										</div>
-										<div class="col s5">
-											
-											<p class="specs"><i class="material-icons">lens</i>4GB GDDR5- NV GTX 1050Ti</p>
-											<p class="specs"><i class="material-icons">lens</i>1 TB 5400 RPM + 512 SSD</p>
-										</div>
-										</div>
-									</div>
-									<div class="divider"></div>
-
-									<div class="row">
-										<div class="col s1">
-											<span>2.</span>
-										</div>
-										<div class="col s3" id="laptop">
-											<img src="img/laptop.png">
-										</div>
-										<div class="col s8 price">
-											<p class="laptop-name">Acer Aspire E5-573G-39G8 (NX MVMSI.045)/ E5-573G-3100 (NX MVPSI.045)</p>
+										<div class="row spec-sec">
+											<div class="col s3">
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Processor"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["RAM"]}}</p>
+											</div>
 											<div class="col s4">
-												Rs.34,540
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Screen"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Software"]}}</p>
 											</div>
-											<div class="col s8">
-												Buy from Amazon
-											</div>											
-										</div>
-										<div class="spec-sec">
-										<div class="col s3">
-											<p class="specs"><i class="material-icons">lens</i>AMD A10 9600P</p>
-											<p class="specs"><i class="material-icons">lens</i>16GB DDR4</p>
-										</div>
-										<div class="col s4">
-											<p class="specs"><i class="material-icons">lens</i>15.6" FHD</p>
-											<p class="specs"><i class="material-icons">lens</i>Win10 + MS Office</p>
-										</div>
-										<div class="col s5">
-											
-											<p class="specs"><i class="material-icons">lens</i>4GB GDDR5- NV GTX 1050Ti</p>
-											<p class="specs"><i class="material-icons">lens</i>1 TB 5400 RPM + 512 SSD</p>
-										</div>
+											<div class="col s5">
+												
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["VRAM"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Storage"]}}</p>
+											</div>
 										</div>
 									</div>
-
-									
 									<div class="divider"></div>
-
-									<div class="row">
-										<div class="col s1">
-											<span>3.</span>
-										</div>
-										<div class="col s3" id="laptop">
-											<img src="img/laptop.png">
-										</div>
-										<div class="col s8 price">
-											<p class="laptop-name">Acer Aspire E5-573G-39G8 (NX MVMSI.045)/ E5-573G-3100 (NX MVPSI.045)</p>
-											<div class="col s4">
-												Rs.34,540
-											</div>
-											<div class="col s8">
-												Buy from Amazon
-											</div>											
-										</div>
-										<div class="spec-sec">
-										<div class="col s3">
-											<p class="specs"><i class="material-icons">lens</i>AMD A10 9600P</p>
-											<p class="specs"><i class="material-icons">lens</i>16GB DDR4</p>
-										</div>
-										<div class="col s4">
-											<p class="specs"><i class="material-icons">lens</i>15.6" FHD</p>
-											<p class="specs"><i class="material-icons">lens</i>Win10 + MS Office</p>
-										</div>
-										<div class="col s5">
-											
-											<p class="specs"><i class="material-icons">lens</i>4GB GDDR5- NV GTX 1050Ti</p>
-											<p class="specs"><i class="material-icons">lens</i>1 TB 5400 RPM + 512 SSD</p>
-										</div>
-										</div>
-									</div>
-
-									<div class="divider"></div>
-									
-									<div class="row">
-										<div class="col s1">
-											<span>4.</span>
-										</div>
-										<div class="col s3" id="laptop">
-											<img src="img/laptop.png">
-										</div>
-										<div class="col s8 price">
-											<p class="laptop-name">Acer Aspire E5-573G-39G8 (NX MVMSI.045)/ E5-573G-3100 (NX MVPSI.045)</p>
-											<div class="col s4">
-												Rs.34,540
-											</div>
-											<div class="col s8">
-												Buy from Amazon
-											</div>											
-										</div>
-										<div class="spec-sec">
-										<div class="col s3">
-											<p class="specs"><i class="material-icons">lens</i>AMD A10 9600P</p>
-											<p class="specs"><i class="material-icons">lens</i>16GB DDR4</p>
-										</div>
-										<div class="col s4">
-											<p class="specs"><i class="material-icons">lens</i>15.6" FHD</p>
-											<p class="specs"><i class="material-icons">lens</i>Win10 + MS Office</p>
-										</div>
-										<div class="col s5">
-											
-											<p class="specs"><i class="material-icons">lens</i>4GB GDDR5- NV GTX 1050Ti</p>
-											<p class="specs"><i class="material-icons">lens</i>1 TB 5400 RPM + 512 SSD</p>
-										</div>
-										</div>
-									</div>
-
-									<div class="divider"></div>
-									<div class="row">
-										<div class="col s1">
-											<span>5.</span>
-										</div>
-										<div class="col s3" id="laptop">
-											<img src="img/laptop.png">
-										</div>
-										<div class="col s8 buy">
-											<p class="laptop-name">Acer Aspire E5-573G-39G8 (NX MVMSI.045)/ E5-573G-3100 (NX MVPSI.045)</p>
-											<div class="col s6 price">
-												Rs.34,540
-											</div>
-											<div class="col s6 buy-amazon">
-												Buy from Amazon
-											</div>											
-										</div>
-										<div class="spec-sec">
-										<div class="col s3">
-											<p class="specs"><i class="material-icons">lens</i>AMD A10 9600P</p>
-											<p class="specs"><i class="material-icons">lens</i>16GB DDR4</p>
-										</div>
-										<div class="col s4">
-											<p class="specs"><i class="material-icons">lens</i>15.6" FHD</p>
-											<p class="specs"><i class="material-icons">lens</i>Win10 + MS Office</p>
-										</div>
-										<div class="col s5">
-											
-											<p class="specs"><i class="material-icons">lens</i>4GB GDDR5- NV GTX 1050Ti</p>
-											<p class="specs"><i class="material-icons">lens</i>1 TB 5400 RPM + 512 SSD</p>
-										</div>
-										</div>
-									</div>
-									
+									{% endfor %}
+									<div class="row center">
+										<button id="get_more_suggestions" class="btn waves-effect waves-light red white-text accent-2"><i class="material-icons left">play_for_work</i>Get More!</button>
+									</div>							
 								</div>
 							</div>
 						</div>
 					</li>
 					<li>
 						<div class="collapsible-header"><i class="material-icons">laptop_mac</i>Thin and Light Laptops</div>
-						<div class="collapsible-body">
-							<span>Generated Text</span>
+						<div class="collapsible-body laptop-list">
+							<div class="row">
+								<div class="col s12">
+									{% for i in range(suggestions_light|length) %}
+									<div class="row laptop-item">
+										<div class="row laptop-brand">
+										<div class="col s1">
+											<span class="rank">{{i+1}}.</span>
+										</div>
+										<div class="col s3" id="laptop">
+											<img src="{{url_for('static',filename='img/laptop.png')}}">
+										</div>
+										
+										<div class="col s8 buy">		
+											<p class="laptop-name">{{suggestions_light[i]["Brand"] + " " + suggestions_light[i]["series name"] }}</p>
+											<div class="valign-wrapper">
+												<div class="col s5 price left">
+													Rs. {{suggestions_light[i]["Best Price"]|int}}
+												</div>
+												<div class="col s7 buy-amazon left-align">
+													Buy from Amazon
+												</div>
+											</div>
+										</div>
+										</div>
+										<div class="row spec-sec">
+											<div class="col s3">
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["Processor"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["RAM"]}}</p>
+											</div>
+											<div class="col s4">
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["Screen"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["Software"]}}</p>
+											</div>
+											<div class="col s5">
+												
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["VRAM"]}}</p>
+												<p class="specs"><i class="material-icons">lens</i>{{suggestions_light[i]["Storage"]}}</p>
+											</div>
+										</div>
+									</div>
+									<div class="divider"></div>
+									{% endfor %}
+									<div class="row center">
+										<button id="get_more_suggestions" class="btn waves-effect waves-light red white-text accent-2"><i class="material-icons left">play_for_work</i>Get More!</button>
+									</div>							
+								</div>
+							</div>
 						</div>
 					</li>
 					<li>
@@ -257,5 +199,6 @@
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+		<script type="text/javascript" src="{{url_for('static',filename='js/suggestions.js')}}"></script>
 	</body>
 </html>

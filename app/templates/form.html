@@ -7,7 +7,7 @@
 		<link type="text/css" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css"  media="screen,projection"/>
 		<!--Let browser know website is optimized for mobile-->
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+		<link type="text/css" rel="stylesheet" href="{{url_for('static',filename='css/form.css')}}">
 	</head>
 	<body>
 	<nav>
@@ -50,7 +50,7 @@
 								<input class="usage" type="checkbox" id="usage_internet" checked="checked" />
 								<label for="usage_internet">Internet</label>
 								
-								<input class="usage" type="checkbox" id="usage_office" />
+								<input class="usage" type="checkbox" id="usage_office" checked/>
 								<label for="usage_office">Office</label>
 								
 								<input class="usage" type="checkbox" id="usage_vc"  />
@@ -61,7 +61,7 @@
 								-->
 								<input class="usage" type="checkbox" id="usage_cds"  />
 								<label for="usage_cds">Playing CDs</label>
-								<input class="usage" type="checkbox" id="usage_movies"  />
+								<input class="usage" type="checkbox" id="usage_movies"  checked/>
 								<label for="usage_movies">Watching Movies</label>								
 								</div>
 								<div class="col s6">
@@ -78,7 +78,7 @@
 								<input class="usage" type="checkbox" id="usage_gaming"/>
 								<label for="usage_gaming">Gaming</label>
 								
-								<input class="usage" type="checkbox" id="usage_coding" checked="checked" />
+								<input class="usage" type="checkbox" id="usage_coding" />
 								<label for="usage_coding">Coding</label>
 								
 								<input class="usage" type="checkbox" id="usage_eng"  />
@@ -94,28 +94,6 @@
 							</div>
 						</div>
 					</li>
-
-					<li>
-						<div class="collapsible-header"><i class="material-icons">laptop_windows</i>Operating System<span class="new badge" data-badge-caption="Select"></span></div>
-						<div class="collapsible-body">
-							<span>Need Windows 10 pre-installed ?</span>
-							<div class="row">
-							<div class="input-field">
-								<div class="col s12">
-									<input name="windows" type="radio" id="windows_yes" checked/>
-									<label for="windows_yes">Yes</label>
-									<input name="windows" type="radio" id="windows_no" />
-									<label for="windows_no">No, I can get a free copy of Windows 10 for myself</label>
-									<!--
-									<input name="group1" type="radio" id="testr3" />
-									<label for="testr3">Linux/Ubuntu works for me</label>
-									-->
-								</div>
-							</div>
-							</div>
-						</div>
-					</li>
-
 					<li id="photo_section" style="display:none">
 						<div class="collapsible-header"><i class="material-icons">brush</i>Photo Editing<span class="new badge" data-badge-caption="Select"></span></div>
 						<div class="collapsible-body">
@@ -157,39 +135,7 @@
 							</div>
 						</div>
 					</li>
-					
-					<li>
-						<div class="collapsible-header"><i class="material-icons">loyalty</i>Brand<span class="new badge" data-badge-caption="Select"></span></div>
-						<div class="collapsible-body">
-							<span>Select one or more!</span>
-							<div class="row">
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_Acer" checked="checked" />
-									<label for="brand_Acer">Acer</label>
-								</div>
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_Dell" />
-									<label for="brand_Dell">Dell</label>
-								</div>
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_HP"  />
-									<label for="brand_HP">HP</label>															
-								</div>
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_Lenovo" />
-									<label for="brand_Lenovo">Lenovo</label>
-								</div>
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_Asus"  />
-									<label for="brand_Asus">ASUS</label>															
-								</div>
-								<div class="col s6">
-									<input class="laptop_brand" type="checkbox" id="brand_MSI" />
-									<label for="brand_MSI">MSI</label>
-								</div>								
-							</div>
-						</div>
-					</li>					
+
 
 					<li id="gaming_section" style="display:none">
 						<div class="collapsible-header"><i class="material-icons">videogame_asset</i>Gaming<span class="new badge" data-badge-caption="Select"></span></div>
@@ -215,6 +161,62 @@
 							</div>
 						</div>
 					</li>
+
+					<li>
+						<div class="collapsible-header"><i class="material-icons">laptop_windows</i>Operating System<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>Need Windows 10 pre-installed ?</span>
+							<div class="row">
+							<div class="input-field">
+								<div class="col s12">
+									<input name="windows" type="radio" id="windows_yes" checked/>
+									<label for="windows_yes">Yes</label>
+									<input name="windows" type="radio" id="windows_no" />
+									<label for="windows_no">No, I can get a free copy of Windows 10 for myself</label>
+									<!--
+									<input name="group1" type="radio" id="testr3" />
+									<label for="testr3">Linux/Ubuntu works for me</label>
+									-->
+								</div>
+							</div>
+							</div>
+						</div>
+					</li>
+					
+					<li>
+						<div class="collapsible-header"><i class="material-icons">loyalty</i>Brand<span class="new badge" data-badge-caption="Select"></span></div>
+						<div class="collapsible-body">
+							<span>Select one or more!</span>
+							<div class="row">
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_Acer" checked="checked" />
+									<label for="brand_Acer">Acer</label>
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_Dell" checked/>
+									<label for="brand_Dell">Dell</label>
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_HP"  checked/>
+									<label for="brand_HP">HP</label>															
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_Lenovo" checked/>
+									<label for="brand_Lenovo">Lenovo</label>
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_Asus"  checked/>
+									<label for="brand_Asus">ASUS</label>															
+								</div>
+								<div class="col s6">
+									<input class="laptop_brand" type="checkbox" id="brand_MSI" checked/>
+									<label for="brand_MSI">MSI</label>
+								</div>								
+							</div>
+						</div>
+					</li>					
+
+
 					
 					<li>
 						<div class="collapsible-header"><i class="material-icons">device_hub</i>Others<span class="new badge" data-badge-caption="Select"></span></div>
@@ -228,11 +230,11 @@
 									<div class="col s10">
 											<input name="screen_size" type="checkbox" id="screen_tiny" />
 											<label for="screen_tiny">10" to 12"</label>
-											<input name="screen_size" type="checkbox" id="screen_small" />
+											<input name="screen_size" type="checkbox" id="screen_small" checked/>
 											<label for="screen_small">13" to 14"</label>
 											<input name="screen_size" type="checkbox" id="screen_med" checked/>
 											<label for="screen_med">15.6"</label>
-											<input name="screen_size" type="checkbox" id="screen_large" checked/>
+											<input name="screen_size" type="checkbox" id="screen_large" />
 											<label for="screen_large">17" to 18"</label>
 									</div>
 								</div>

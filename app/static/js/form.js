@@ -59,7 +59,7 @@ $(document).ready(function(){
 	}
     $('#get_suggestions').bind('click', function() {
     	console.log("Clicked");
-      $.getJSON('/getSuggestions', { 
+      $.getJSON('/validateInputs', { 
 			budget : $('#budget').val(),
 	      	usages : get_ids($('.usage:checkbox:checked')),
 	      	other_usages :$('#other_usage').val(),
@@ -76,7 +76,12 @@ $(document).ready(function(){
         //a: $('input[name="a"]').val(),
         //b: $('input[name="b"]').val()
       }, function(data) {
-        console.log(data);
+      	if (data.data_validation){
+      		window.location.href = "/suggestions";
+      	}
+        else {
+        	console.log("Server Data Validation Error");
+        }
       });
       return false;
     });
