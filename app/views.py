@@ -138,7 +138,7 @@ def filterMaster(uc,light=False):
 	ms = master_sheet.copy()
 	print ms.shape
 	if uc['touch_screen']:
-		ms = [ms['normal / touch / 360 / detachable'].isin(['360','detachable','touch'])]
+		ms = ms[ms['normal / touch / 360 / detachable'].isin(['360','detachable','touch'])]
 	else:
 		ms = ms[ms['normal / touch / 360 / detachable']=='normal']
 	print ms.shape
@@ -167,11 +167,14 @@ def sortLaptops(filteredLaptops,bucket):
 
 def generateTextSuggestions(uc):
 	bucket = bucketSelection(uc)
-	slabs = [0,25000,40000,60000,80000,200000]
+	slabs = [0,25000,40000,60000,80000,1000000]
 	for i in slabs:
 		if i >= uc["budget"]:
 			high = i
 			break
+	#Patch for budget higher than 80000
+	if high>80000:
+		high = 80000
 	ss = suggestion_sheet.copy()
 	return ss[(ss.Bucket==bucket) & (ss.Budget==high)].to_dict(orient="records")[0]
 

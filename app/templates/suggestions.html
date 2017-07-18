@@ -76,7 +76,7 @@
 											<span class="rank">{{i+1}}.</span>
 										</div>
 										<div class="col s3" id="laptop">
-											<img src="{{url_for('static',filename='img/laptop.png')}}">
+											<img src="{{url_for('static',filename='img/laptops/'+ suggestions[i]['pic name']+'.jpg')}}">
 										</div>	
 										<div class="col s8 buy">		
 											<p class="laptop-name">{{suggestions[i]["Brand"] + " " + suggestions[i]["series name"] }}</p>
@@ -95,11 +95,11 @@
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Processor"]}}</p>
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["RAM"]}}</p>
 											</div>
-											<div class="col s4">
+											<div class="col s3">
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Screen"]}}</p>
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Software"]}}</p>
 											</div>
-											<div class="col s5">
+											<div class="col s6">
 												
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["VRAM"]}}</p>
 												<p class="specs"><i class="material-icons">lens</i>{{suggestions[i]["Storage"]}}</p>
@@ -127,7 +127,7 @@
 											<span class="rank">{{i+1}}.</span>
 										</div>
 										<div class="col s3" id="laptop">
-											<img src="{{url_for('static',filename='img/laptop.png')}}">
+											<img src="{{url_for('static',filename='img/laptops/'+ suggestions_light[i]['pic name']+'.jpg')}}">
 										</div>
 										
 										<div class="col s8 buy">		
